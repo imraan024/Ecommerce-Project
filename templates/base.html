@@ -1,3 +1,5 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +11,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="static/style.css">
+
+    
+    {% block style%}
+    {% endblock %}
+
+    <link rel="stylesheet" href='{% static "style.css" %}'>
     <title>E commerce</title>
 </head>
 
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-md navbar-light" style="background-color: #4b92c4;">
+<nav class="navbar navbar-expand-md navbar-light" style="background-color: #5c10eb;">
 
-    <a class="navbar-brand" href="#!">
+    <a class="navbar-brand" href="{% url 'home' %}">
       <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="30" alt="E COM">
     </a>
 
@@ -63,12 +70,12 @@
           </a>
         </li>
         <li class="nav-item d-md-none d-xl-inline-block">
-          <a href="#!" class="nav-link waves-effect">
+          <a href="{% url 'login' %}" class="nav-link waves-effect">
             Sign in
           </a>
         </li>
         <li class="nav-item pl-2 mb-2 mb-md-0 d-md-none d-xl-inline-block">
-          <a href="#!" type="button"
+          <a href="{% url 'registration' %}" type="button"
             class="btn btn-outline-info btn-md btn-rounded btn-navbar waves-effect waves-light">Sign
             up</a>
         </li>
