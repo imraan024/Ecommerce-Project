@@ -1,0 +1,11 @@
+.card-image-top{
+    height: 200px;
+    width: 180px;
+}
+.custom-card{
+    height: 500px;
+    width: 200px;
+}
+a{
+    text-decoration: none;
+}
